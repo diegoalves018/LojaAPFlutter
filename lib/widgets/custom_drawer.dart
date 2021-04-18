@@ -59,7 +59,7 @@ class CustomDrawer extends StatelessWidget {
                               child: Text(
                                 "Entrar ou cadastrar",
                                 style: TextStyle(
-                                    color: Theme.of(context).primaryColor,
+                                    color: Color.fromARGB(255, 124, 29, 208),
                                     fontSize: 16.0,
                                     fontWeight: FontWeight.bold
                                 ),

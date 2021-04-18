@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:loja_mobile/tabs/category_tab.dart';
 import 'package:loja_mobile/tabs/home_tab.dart';
