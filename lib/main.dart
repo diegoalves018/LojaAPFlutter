@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
             child: MaterialApp(
                 title: 'Loja A P',
                 theme: ThemeData(
-                  primarySwatch: Colors.yellow,
+                  primarySwatch: Colors.blue,
                   primaryColor: Color.fromARGB(255, 243, 25, 25),
                 ),
                 debugShowCheckedModeBanner: false,
