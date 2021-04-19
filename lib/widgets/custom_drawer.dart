@@ -12,12 +12,12 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget _buildDrawerBack() => Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  colors: [Color.fromARGB(255, 246, 134, 104), Colors.white],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter)),
-        );
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: [Color.fromARGB(255, 246, 134, 104), Colors.white],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter)),
+    );
 
     return Drawer(
       child: Stack(
@@ -46,36 +46,36 @@ class CustomDrawer extends StatelessWidget {
                         bottom: 0.0,
                         child: ScopedModelDescendant<UserModel>(
                             builder: (context, child, model) {
-                          return Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                "Olá, ${!model.isLoggedIn() ? "" : model.userData["name"]}",
-                                style: TextStyle(
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              GestureDetector(
-                                child: Text(
-                                  !model.isLoggedIn() ?
-                                  "Entrar ou cadastrar ->"
-                                  : "Sair",
-                                  style: TextStyle(
-                                      color: Color.fromARGB(255, 124, 29, 208),
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                                onTap: () {
-                                  if(!model.isLoggedIn())
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => LoginScreen()));
-                                  else
-                                    model.signOut();
-                                },
-                              )
-                            ],
-                          );
-                        }))
+                              return Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text(
+                                    "Olá, ${!model.isLoggedIn() ? "" : model.userData["name"]}",
+                                    style: TextStyle(
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  GestureDetector(
+                                    child: Text(
+                                      !model.isLoggedIn() ?
+                                      "Entrar ou cadastrar ->"
+                                          : "Sair",
+                                      style: TextStyle(
+                                          color: Color.fromARGB(255, 124, 29, 208),
+                                          fontSize: 16.0,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    onTap: () {
+                                      if(!model.isLoggedIn())
+                                        Navigator.of(context).push(MaterialPageRoute(
+                                            builder: (context) => LoginScreen()));
+                                      else
+                                        model.signOut();
+                                    },
+                                  )
+                                ],
+                              );
+                            }))
                   ],
                 ),
               ),

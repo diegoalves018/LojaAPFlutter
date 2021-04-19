@@ -3,21 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:loja_mobile/datas/cart_product.dart';
 import 'package:loja_mobile/datas/product_data.dart';
+import 'package:loja_mobile/models/cart_model.dart';
 
 class CartTile extends StatelessWidget {
   final CartProduct cartProduct;
 
   CartTile(this.cartProduct);
-
-  final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
-    onPrimary: Colors.black87,
-    primary: Color.fromARGB(255, 219, 64, 64),
-    minimumSize: Size(88, 36),
-    padding: EdgeInsets.symmetric(horizontal: 16),
-    shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(10)),
-    ),
-  );
 
   @override
   Widget build(BuildContext context) {
@@ -49,17 +40,30 @@ class CartTile extends StatelessWidget {
                     fontWeight: FontWeight.bold),
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  IconButton(icon: Icon(Icons.remove), onPressed: () {}),
+                  IconButton(icon: Icon(Icons.remove),
+                      color: Color.fromARGB(255, 255, 3, 112),
+                      onPressed: cartProduct.quantity > 1 ?
+                          (){
+                    CartModel.of(context).decProduct(cartProduct);
+                          } : null
+                      ),
                   Text(cartProduct.quantity.toString()),
-                  IconButton(icon: Icon(Icons.add), onPressed: () {}),
+                  IconButton(icon: Icon(Icons.add),
+                      color: Color.fromARGB(255, 45, 255, 0),
+                      onPressed: () {
+                        CartModel.of(context).incProduct(cartProduct);
+                      }),
                   TextButton(
                     style: ButtonStyle(
                       foregroundColor:
-                          MaterialStateProperty.all<Color>(Colors.red),
+                          MaterialStateProperty.all<Color>(Colors.grey[500]),
                     ),
                     child: Text("Remover"),
-                    onPressed: () {},
+                    onPressed: () {
+                      CartModel.of(context).removeCartItem(cartProduct);
+                    },
                   )
                 ],
               ),
