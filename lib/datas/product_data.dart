@@ -23,7 +23,7 @@ class ProductData{
   Map<String, dynamic>toResumedMap(){
     return {
       "title": title,
-      "description": description,
+      //"description": description,
       "price": price
     };
 
