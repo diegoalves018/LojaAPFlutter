@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
                 title: 'Loja A P',
                 theme: ThemeData(
                   primarySwatch: Colors.blue,
-                  primaryColor: Color.fromARGB(255, 243, 25, 25),
+                  primaryColor: Color.fromARGB(255, 243, 69, 25),
                 ),
                 debugShowCheckedModeBanner: false,
                 home: HomeScreen()
