@@ -36,13 +36,15 @@ class ProductTile extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       product.title,
-                      style: TextStyle(fontWeight: FontWeight.w500),
+                      style: TextStyle(fontWeight: FontWeight.w500,
+                      fontSize: 11
+                        ),
                     ),
                     Text(
                       "R\$ ${product.price.toStringAsFixed(2)}",
                       style: TextStyle(
                           color: Theme.of(context).primaryColor,
-                          fontSize: 17.0,
+                          fontSize: 11.0,
                           fontWeight: FontWeight.bold),
                     )
                   ],

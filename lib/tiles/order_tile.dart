@@ -54,16 +54,16 @@ class OrderTile extends StatelessWidget {
                         _buildCircle("1", "Preparação", status, 1),
                         Container(
                           height: 1.0,
-                          width: 40.0,
+                          width: 25.0,
                           color: Colors.grey[500],
                         ),
                         _buildCircle("2", "Transporte", status, 2),
                         Container(
                           height: 1.0,
-                          width: 40.0,
+                          width: 25.0,
                           color: Colors.grey[500],
                         ),
-                        _buildCircle("3", "Preparação", status, 3),
+                        _buildCircle("3", "Entregue", status, 3),
                       ],
                     )
                   ],
